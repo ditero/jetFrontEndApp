@@ -1,6 +1,27 @@
-<!--
-  Copyright (c) 2015, 2017, Oracle and/or its affiliates.
-  The Universal Permissive License (UPL), Version 1.0
--->
-<p data-bind="text:messageText"></p>
-<h1>Login  Area</h1>
+<div class="login-component">
+
+    <!--
+     Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+     The Universal Permissive License (UPL), Version 1.0
+     -->
+
+      <label for="text-user">User:</label>
+      <input id="text-user" type="text" data-bind="ojComponent: {component: 'ojInputText', value: user, required:true, invalidComponentTracker: tracker}" />
+
+      <label for="text-password">Password:</label>
+      <input id="text-password" type="password" data-bind="ojComponent: {component: 'ojInputPassword', value: password, required:true, invalidComponentTracker: tracker}" />
+    <!-- </br> -->
+      <label for="text-aisurl">AIS URL:</label>
+      <input id="text-aisurl" type="text" data-bind="ojComponent: {component: 'ojInputText', value: aisurl, required:true, invalidComponentTracker: tracker}" />
+
+      </br><br/>
+      <input id="text-checkbox" type="checkbox" data-bind="checked: storeCreds">
+      <label for="text-checkbox">Remember Me</label>
+      <br><hr>
+      <input id="submit" type="submit" data-bind="click: submitBt,
+              ojComponent: {component: 'ojButton', label: 'Login'}" />
+            </br>
+
+            </br>
+
+</div>

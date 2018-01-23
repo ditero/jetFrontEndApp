@@ -5,7 +5,8 @@
 /*
  * Your about ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'jet-composites/login-component/loader'],
+define(['ojs/ojcore', 'knockout', 'jquery','ojs/ojinputtext',
+    'ojs/ojvalidation-number', 'ojs/ojbutton', 'ojs/ojknockout-validation', 'jet-composites/login-component/loader'],
  function(oj, ko, $) {
 
     function loginModel() {
