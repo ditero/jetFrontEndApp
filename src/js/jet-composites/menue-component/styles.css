@@ -1,0 +1,7 @@
+menue-component:not(.oj-complete){
+  visibility: hidden;
+}
+
+menue-component{
+
+}

@@ -1,4 +1,4 @@
-define(['knockout'],
+define(['knockout', 'ojs/ojrouter'],
     function(ko) {
         function model(context) {
                 var self = this;
@@ -61,6 +61,8 @@ define(['knockout'],
 
                    localStorage.setItem('username', self.user());
                  }
+                   
+                 oj.Router.rootInstance.go('menue');
                  this.callAIS();
                  return true;
                }

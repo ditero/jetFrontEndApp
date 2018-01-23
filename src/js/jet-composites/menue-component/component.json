@@ -1,0 +1,18 @@
+{
+  "name": "menue-component",
+  "displayName": "menue-component",
+  "description": "Describe your component here",
+  "version": "1.0.0",
+  "jetVersion": "^4.1.0",
+  "properties": {
+  },
+  "methods": {
+
+  }, 
+  "events": {
+
+  }, 
+  "slots": {
+
+  }
+}
