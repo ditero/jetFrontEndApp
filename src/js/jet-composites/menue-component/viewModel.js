@@ -3,25 +3,38 @@
   The Universal Permissive License (UPL), Version 1.0
 */
 define(
-    ['ojs/ojcore', 'knockout', 'jquery'], function (oj, ko, $) {
+    ['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout',
+'ojs/ojnavigationlist',
+'ojs/ojconveyorbelt',
+'ojs/ojpopup'], function (oj, ko, $) {
     'use strict';
-    
+
     function ExampleComponentModel(context) {
         var self = this;
         self.composite = context.element;
         //Example observable
-        self.messageText = ko.observable('Hello from Example Component');
-
+        // self.messageText = ko.observable('Hello from Example Component');
+        self.selectedItem = ko.observable('');
+            self.selectedItemText = ko.observable('');
+            self.currentItem = ko.observable('');
+            this.optionChange = function(event){
+                //display popup
+                self.selectedItemText(event.detail.value);
+                 document.getElementById('popup1').open('#' + event.detail.value,
+                   {my:{horizontal:'start', vertical:'bottom'},
+                    at:{horizontal:'center', vertical:'top'}
+                   });
+            };
         context.props.then(function (propertyMap) {
             //Store a reference to the properties for any later use
             self.properties = propertyMap;
 
-            //Parse your component properties here 
+            //Parse your component properties here
 
         });
     };
-    
-    //Lifecycle methods - uncomment and implement if necessary 
+
+    //Lifecycle methods - uncomment and implement if necessary
     //ExampleComponentModel.prototype.activated = function(context){
     //};
 

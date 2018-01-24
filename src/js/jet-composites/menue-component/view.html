@@ -2,6 +2,57 @@
   Copyright (c) 2015, 2017, Oracle and/or its affiliates.
   The Universal Permissive License (UPL), Version 1.0
 -->
-<p data-bind="text:messageText"></p>
+<!-- <p data-bind="text:messageText"></p> -->
+<div id="navlistdemo">
+          <div>
+            <oj-navigation-list selection="{{selectedItem}}"
+                                current-item="{{currentItem}}"
+                                edge="top"
+                                on-selection-changed="[[optionChange]]">
+              <ul >
+                <li id="modules">
+                  <a href="#">
+                    Modules
+                  </a>
+                </li>
+                <li id="accounts">
+                  <a href="#">
+                    Accounts
+                  </a>
+                </li>
+                <!-- <li id="cookbook">
+                  <a href="#">
+                    Cookbook
+                  </a>
+                </li>
+                <li id="stylelab" class="oj-disabled">
+                  <a href="#">
+                    Style Lab
+                  </a>
+                </li>
+                <li id="library" >
+                  <a href="#" >
+                    Library
+                  </a>
+                </li> -->
+              </ul>
+            </oj-navigation-list>
+          </div>
 
-<h1>Menue</h1>
+          <div class="oj-label">
+            <br/>
+            <!-- <label for="curr-selection">Selected List Item:&nbsp;</label> -->
+            <!-- <span id="curr-selection-value" data-bind="text: selectedItem"></span> -->
+            <!-- <p>All The Apps to be displayed Here...</p> -->
+            <br/>
+            <br/>
+
+            <!-- <label for="current-item">Current Item:&nbsp;</label> -->
+            <!-- <span id="current-item-value" data-bind="text: currentItem"></span> -->
+
+            <oj-popup style="display:none" id="popup1" tail="simple">
+              <span> "<span data-bind="text: selectedItemText"></span>" Selected !!!</span>
+            </oj-popup>
+          </div>
+
+        </div>
