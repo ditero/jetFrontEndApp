@@ -1,0 +1,7 @@
+panel-component:not(.oj-complete){
+  visibility: hidden;
+}
+
+panel-component{
+
+}

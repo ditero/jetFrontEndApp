@@ -6,7 +6,7 @@ define(
     ['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout',
 'ojs/ojnavigationlist',
 'ojs/ojconveyorbelt',
-'ojs/ojpopup'], function (oj, ko, $) {
+'ojs/ojpopup', 'jet-composites/panel-component/loader', 'jet-composites/login-component/loader'], function (oj, ko, $) {
     'use strict';
 
     function ExampleComponentModel(context) {
@@ -17,14 +17,25 @@ define(
         self.selectedItem = ko.observable('');
             self.selectedItemText = ko.observable('');
             self.currentItem = ko.observable('');
+
+
+            self.panel = ko.observable() // Initially blank
+
             this.optionChange = function(event){
+              if (self.currentItem() === "modules") {
+                $(".div-blcok").append("<panel-component></panel-component>")
+                // self.panel("<panel-component></panel-component>");
+              } else {
+                self.panel("<h1>fg</h1>")
+              }
                 //display popup
-                self.selectedItemText(event.detail.value);
-                 document.getElementById('popup1').open('#' + event.detail.value,
-                   {my:{horizontal:'start', vertical:'bottom'},
-                    at:{horizontal:'center', vertical:'top'}
-                   });
+                // self.selectedItemText(event.detail.value);
+                //  document.getElementById('popup1').open('#' + event.detail.value,
+                //    {my:{horizontal:'start', vertical:'bottom'},
+                //     at:{horizontal:'center', vertical:'top'}
+                //    });
             };
+
         context.props.then(function (propertyMap) {
             //Store a reference to the properties for any later use
             self.properties = propertyMap;
