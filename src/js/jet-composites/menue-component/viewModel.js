@@ -18,15 +18,16 @@ define(
             self.selectedItemText = ko.observable('');
             self.currentItem = ko.observable('');
 
-
             self.panel = ko.observable() // Initially blank
 
             this.optionChange = function(event){
               if (self.currentItem() === "modules") {
-                $(".div-blcok").append("<panel-component></panel-component>")
+                $("login-component").removeClass("state");
+                $("panel-component").addClass("state");
                 // self.panel("<panel-component></panel-component>");
               } else {
-                self.panel("<h1>fg</h1>")
+                $("login-component").addClass("state");
+                $("panel-component").removeClass("state");
               }
                 //display popup
                 // self.selectedItemText(event.detail.value);

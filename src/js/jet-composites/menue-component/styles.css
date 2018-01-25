@@ -5,3 +5,7 @@ menue-component:not(.oj-complete){
 menue-component{
 
 }
+
+.state {
+  visibility: hidden;
+}
