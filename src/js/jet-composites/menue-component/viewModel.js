@@ -6,7 +6,7 @@ define(
     ['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout',
 'ojs/ojnavigationlist',
 'ojs/ojconveyorbelt',
-'ojs/ojpopup', 'jet-composites/panel-component/loader', 'jet-composites/login-component/loader'], function (oj, ko, $) {
+'ojs/ojpopup', 'jet-composites/panel-component/loader', 'jet-composites/login-component/loader', 'jet-composites/modules-component/loader'], function (oj, ko, $) {
     'use strict';
 
     function ExampleComponentModel(context) {
@@ -22,11 +22,12 @@ define(
 
             this.optionChange = function(event){
               if (self.currentItem() === "modules") {
-                $("login-component").removeClass("state");
+                $("modules-component").removeClass("state");
                 $("panel-component").addClass("state");
+                
                 // self.panel("<panel-component></panel-component>");
               } else {
-                $("login-component").addClass("state");
+                $("modules-component").addClass("state");
                 $("panel-component").removeClass("state");
               }
                 //display popup
