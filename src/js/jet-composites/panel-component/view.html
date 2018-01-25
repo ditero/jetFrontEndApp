@@ -6,10 +6,27 @@
 <div id="panelPage">
 
 
-  <div class="oj-flex">
+  <div class="oj-flex" data-bind = "foreach: userAccounts">
 
     <div class="oj-panel oj-sm-margin-2x demo-mypanel">
-        <h3>Remove Affordance</h3>
+
+        <h3 data-bind="text: description"></h3>
+        <!-- <h3 data-bind="text: ais"></h3> -->
+
+        <div>Affordance only, see demo description for link to example usage.</div>
+
+
+        <oj-button class="oj-panel-remove-button demo-button"
+                   chroming="half"
+                   display="icons">
+          <span slot="startIcon" class="oj-panel-remove-icon"></span>
+          <span>remove</span>
+        </oj-button>
+    </div>
+
+    <!-- <div class="oj-panel oj-sm-margin-2x demo-mypanel">
+
+        <h3 data-bind="text: secondUser"></h3>
         <div>Affordance only, see demo description for link to example usage.</div>
         <oj-button class="oj-panel-remove-button demo-button"
                    chroming="half"
@@ -20,7 +37,8 @@
     </div>
 
     <div class="oj-panel oj-sm-margin-2x demo-mypanel">
-        <h3>Remove Affordance</h3>
+
+        <h3 data-bind="text: thirdUser"></h3>
         <div>Affordance only, see demo description for link to example usage.</div>
         <oj-button class="oj-panel-remove-button demo-button"
                    chroming="half"
@@ -28,18 +46,11 @@
           <span slot="startIcon" class="oj-panel-remove-icon"></span>
           <span>remove</span>
         </oj-button>
-    </div>
-    <div class="oj-panel oj-sm-margin-2x demo-mypanel">
-        <h3>Remove Affordance</h3>
-        <div>Affordance only, see demo description for link to example usage.</div>
-        <oj-button class="oj-panel-remove-button demo-button"
-                   chroming="half"
-                   display="icons">
-          <span slot="startIcon" class="oj-panel-remove-icon"></span>
-          <span>remove</span>
-        </oj-button>
-    </div>
+    </div> -->
 
 
+  </div>
+  <div data-bind = "foreach: envDescription">
+    <p data-bind = "text: description">
   </div>
 </div>
