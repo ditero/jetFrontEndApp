@@ -12,15 +12,6 @@ define(
         //Example observable
         // self.messageText = ko.observable('Hello from Example Component');
 
-        var baseURl = "http://localhost:5000/"
-        $.ajax({
-            type: 'get',
-            url: baseURl + "jde/get_config",
-            contentType: "application/json",
-            success: function(data) {
-                console.log(data[0].accounts);
-            }
-        })  
         context.props.then(function (propertyMap) {
             //Store a reference to the properties for any later use
             self.properties = propertyMap;

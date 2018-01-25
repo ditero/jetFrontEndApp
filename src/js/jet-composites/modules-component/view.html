@@ -1,0 +1,34 @@
+
+    <oj-list-view id="listview" aria-label="list to show selection features"
+    data="[[dataProvider]]" selection="{{selectedItems}}"
+    on-current-item-changed="[[handleOpen]]"
+    on-selection-changed="[[handleSelectionChanged]]"
+
+    item.renderer="[[oj.KnockoutTemplateUtils.getRenderer('moduleItems', true)]]">
+</oj-list-view>
+
+
+
+<div id="dialogWrapper">
+    <oj-dialog style="display:none" id="dialog1"
+               title="Steltix"
+               modality="modeless"
+               on-oj-animate-start='[[startAnimationListener]]'>
+        <div slot="body" data-bind="foreach: allItems">
+            <li data-bind="text: description">
+                <!-- <span data-bind="text: $data.description"></span> -->
+            </li>
+        </div>
+        <div slot="footer">
+            <oj-button id="okButton" data-bind="click: handleOKClose">OK</oj-button>
+        </div>
+    </oj-dialog>
+</div>
+
+
+
+    <div type="text/html" id="moduleItems">
+      <li data-bind="attr: {id: 'module' + $context.index}">
+          <span data-bind="text: $data.description"> </span>
+      </li>
+    </div>
