@@ -37,8 +37,14 @@ define(
           // console.log(myAccounts);
           for (var i = 0; i < myAccounts.length; i++) {
             // console.log(myAccounts[i].environments[i].ais)
+<<<<<<< HEAD
             self.userAccounts.push(myAccounts[i])
             self.envDescription.push(myAccounts[i].environments[i])
+=======
+
+            self.userAccounts.push(myAccounts[i])
+            // self.envDescription.push(myAccounts[i].environments[i])
+>>>>>>> 8edcbfb4daa2943b80f89fa808eaafc779bc4944
           }
       }
 
